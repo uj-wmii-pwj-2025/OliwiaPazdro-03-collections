@@ -4,7 +4,6 @@ import java.io.InputStream;
 import java.io.PrintStream;
 
 public interface Brainfuck {
-
     /**
      * Executes uploaded program.
      */
@@ -30,7 +29,6 @@ public interface Brainfuck {
      * @throws IllegalArgumentException if: program is null or empty, OR out is null, OR in is null, OR stackSize is below 1.
      */
     static Brainfuck createInstance(String program, PrintStream out, InputStream in, int stackSize) {
-        return null;
+        return new BrainfuckInterpreter(program, out, in, stackSize);
     }
-
 }
